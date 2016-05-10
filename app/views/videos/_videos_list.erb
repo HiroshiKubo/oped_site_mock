@@ -1,0 +1,22 @@
+<%= hidden_field_tag 'search_site', @search_site %>
+<%= hidden_field_tag 'keyword', @keyword %>
+
+<% @videos.map.with_index { |video,i| %>
+  <div id="videos_id_<%= i+1 %>" class="videos_list" onclick="videosListClickCheckedChange(<%= i+1 %>)">
+    <% video[:video_url] = video[:video_url].to_s %>
+    <p>
+      <%= check_box_tag "animes_checked[#{i+1}]",  video[:video_url], false, {} %>
+    </p>
+    <p>
+      <img src=<%= video[:image] %> alt=”画像”>
+      <%= @search_site %>のリンクは以下<br/>
+      <a href=<%= videoIdToLink(@search_site, video[:video_url]) %> target="_blank"> <%= video[:video_url] %></a>
+    </p>
+
+    <p>
+      タイトル：<%= video[:title] %>
+    </p>
+
+    <hr>
+  </div>
+<% } %>

@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Anime:</strong>
+  <%= @article.anime_id %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @article.title %>
+</p>
+
+<p>
+  <strong>Video:</strong>
+  <%= @article.video_id %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @article.content %>
+</p>
+
+<p>
+  <strong>Oped:</strong>
+  <%= @article.oped %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @article.number %>
+</p>
+
+<p>
+  <strong>Advertisement:</strong>
+  <%= @article.advertisement %>
+</p>
+
+<p>
+  <strong>Initials:</strong>
+  <%= @article.initials %>
+</p>
+
+<%= link_to 'Edit', edit_article_path(@article) %> |
+<%= link_to 'Back', articles_path %>

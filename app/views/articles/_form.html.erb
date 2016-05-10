@@ -1,0 +1,80 @@
+<%= form_for(@article) do |f| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@article.errors.count, "error") %> prohibited this article from being saved:</h2>
+
+      <ul>
+      <% @article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :anime_id %><br>
+    <% if @anime_id != nil %>
+      <%= f.number_field :anime_id, value: @anime_id %>
+    <% else %>
+      <%= f.number_field :anime_id %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <% if @title != nil %>
+      <%= f.text_field :title, value: @title %>
+    <% else %>
+      <%= f.text_field :title %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :video_id %><br>
+    <% if @video_id != nil %>
+      <%= f.number_field :video_id, value: @video_id %>
+    <% else %>
+      <%= f.number_field :video_id %>
+    <% end %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br>
+    <%= f.text_area :content %>
+  </div>
+  <div class="field">
+    <%= f.label :oped %><br>
+    <%= f.text_field :oped %>
+  </div>
+  <div class="field">
+    <%= f.label :number %><br>
+    <%= f.number_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :advertisement ,value: "広告1" %><br>
+    <input type="text" id="advertisement_1">
+  </div>
+  <div class="field">
+    <%= f.label :advertisement ,value: "広告2" %><br>
+    <input type="text" id="advertisement_2">
+  </div>
+  <div class="field">
+    <%= f.label :advertisement ,value: "広告3" %><br>
+    <input type="text" id="advertisement_3">
+  </div>
+  <input type="button" value="反映" onclick="a8ToData()">
+  <input type="button" value="ロード">
+  <div class="field">
+    <%= f.label :advertisement ,value: "広告(送信する文)" %><br>
+    <%= f.text_field :advertisement %>
+  </div>
+  <div class="field">
+    <%= f.label :initials %><br>
+    <%= f.text_field :initials %>
+  </div>
+  <div class="field">
+    <%= f.label :release %><br>
+    <%= f.check_box :release %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

@@ -1,0 +1,20 @@
+<h1>Editing Anime Schedule</h1>
+<% #form_for(:data,url: {:action=>'data_list'}) do |f| %>
+<%= form_tag({:action=>"admin_search"}, {:method=>"get", enforce_utf8: false}) do %>
+  <div class="field">
+    <p>
+      please keyword<br>
+      <input type = "text" name = "keyword" />
+    </p>
+    <p>
+      検索サイト：<br/>
+      Youtube:<input type = "radio" name = "search_site" value = "youtube"><br/>
+      Youku:<input type = "radio" name = "search_site" value = "youku">
+    </p>
+  </div>
+  <div class = "actions">
+    <%= submit_tag "検索", name: nil %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', anime_data_path %>

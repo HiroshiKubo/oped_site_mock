@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>year:</strong>
+  <%= @year %>
+</p>
+
+<p>
+  <strong>month:</strong>
+  <%= @month %>
+</p>
+
+<%= form_for(:animes_checked, url: {:action=>'create_anime_schedule'}) do|f| %>
+  <input type="button" value="全部を選択" onclick="allCheckAnimeDataChecked()">
+  <input type="button" value="全部を解除" onclick="allCheckAnimeDataDisChecked()">
+  <%= f.submit "決定"%>
+  <hr>
+
+  <% @animes_data.map.with_index { |data,i| %>
+    <%= f.check_box :checked, {:name => "animes_checked[]"}, i+1 %>
+
+    <p>
+      <%= data[:japanese] %>  <br/>
+      <%= data[:year] %>      <br/>
+      <%= data[:month] %>     <br/>
+      <%= data[:url] %>       <br/>
+    </p>
+    <hr>
+  <% } %>
+
+  <%= f.submit "決定"%>
+<% end %>

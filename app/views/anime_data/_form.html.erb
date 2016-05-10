@@ -1,0 +1,41 @@
+<%= form_for(@anime_datum) do |f| %>
+  <% if @anime_datum.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@anime_datum.errors.count, "error") %> prohibited this anime_datum from being saved:</h2>
+
+      <ul>
+      <% @anime_datum.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :japanese %><br>
+    <%= f.text_field :japanese %>
+  </div>
+  <div class="field">
+    <%= f.label :english %><br>
+    <%= f.text_field :english %>
+  </div>
+  <div class="field">
+    <%= f.label :chinese %><br>
+    <%= f.text_field :chinese %>
+  </div>
+  <div class="field">
+    <%= f.label :year %><br>
+    <%= f.text_field :year %>
+  </div>
+  <div class="field">
+    <%= f.label :month %><br>
+    <%= f.number_field :month %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.text_field :url %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

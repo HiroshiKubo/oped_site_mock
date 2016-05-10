@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Videos</h1>
+
+<%= link_to "Anime_data", controller: "anime_data" %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Anime</th>
+      <th>VideoTitle</th>
+      <th>Video url</th>
+      <th>Frame</th>
+      <th>Release</th>
+      <th colspan="4"></th>
+    </tr>
+  </thesad>
+
+  <tbody>
+    <% @videos.each do |video| %>
+      <tr>
+        <td><%= AnimeDatum.find(video.anime_id)[:japanese] %></td>
+        <td><%= video.title %></td>
+        <td><a href=<%= videoIdToLink(video.frame, video.video_url) %> target="_blank"> <%= video.video_url %></a></td>
+        <td><%= video.frame %></td>
+        <td><%= video.release %></td>
+        <td><%= link_to 'Show', video %></td>
+        <td><%= link_to 'Edit', edit_video_path(video) %></td>
+        <td><%= link_to 'Destroy', video, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '記事を作成する', new_article_path(anime_id: video.anime_id, video_id: video.id,title: video.title) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Video', new_video_path %>

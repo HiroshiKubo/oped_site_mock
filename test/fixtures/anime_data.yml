@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  japanese: MyString
+  english: MyString
+  chinese: MyString
+  year: MyString
+  month: 1
+  url: MyString
+
+two:
+  japanese: MyString
+  english: MyString
+  chinese: MyString
+  year: MyString
+  month: 1
+  url: MyString

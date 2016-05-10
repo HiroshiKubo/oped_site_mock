@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Anime:</strong>
+  <%= @video.anime_id %>
+</p>
+
+<p>
+  <strong>Video url:</strong>
+  <%= @video.video_url %>
+</p>
+
+<p>
+  <strong>Frame:</strong>
+  <%= @video.frame %>
+</p>
+
+<p>
+  <strong>Release:</strong>
+  <%= @video.release %>
+</p>
+
+<%= link_to 'Edit', edit_video_path(@video) %> |
+<%= link_to 'Back', videos_path %>

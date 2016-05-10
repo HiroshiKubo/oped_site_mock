@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Japanese:</strong>
+  <%= @anime_datum.japanese %>
+</p>
+
+<p>
+  <strong>English:</strong>
+  <%= @anime_datum.english %>
+</p>
+
+<p>
+  <strong>Chinese:</strong>
+  <%= @anime_datum.chinese %>
+</p>
+
+<p>
+  <strong>Year:</strong>
+  <%= @anime_datum.year %>
+</p>
+
+<p>
+  <strong>Month:</strong>
+  <%= @anime_datum.month %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @anime_datum.url %>
+</p>
+
+<%= link_to 'Edit', edit_anime_datum_path(@anime_datum) %> |
+<%= link_to 'Back', anime_data_path %>

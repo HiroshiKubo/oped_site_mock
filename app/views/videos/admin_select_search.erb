@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+<p>select_search</p>
+
+GetKeyWord:<%= @keyword%>
+<%= form_tag({:action=>"create_video"}, {:method=>"post"}) do %>
+  <div class = "actions">
+    <%= submit_tag "決定", name: nil %>
+  </div>
+  <p>
+    <strong>keyword:</strong>
+    <%= @keyword %>
+    <br/>
+    <%= render 'videos_list' %>
+    <%= hidden_field_tag 'anime_id', @id %>
+  </p>
+
+  <div class = "actions">
+    <%= submit_tag "決定", name: nil %>
+  </div>
+<% end %>

@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+<p>Select Language</p>
+<p>
+  <strong>Japanese:</strong>
+  <%= @anime_datum.japanese %>
+</p>
+
+<p>
+  <strong>English:</strong>
+  <%= @anime_datum.english %>
+</p>
+
+<p>
+  <strong>Chinese:</strong>
+  <%= @anime_datum.chinese %>
+</p>
+
+<%= form_tag({controller: "videos", action: "admin_select_search"}, {method: "get", enforce_utf8: false}) do %>
+  <%= hidden_field_tag 'id',@anime_datum.id %>
+  <p>
+    検索するアニメタイトルの言語を選択<br/>
+    日本語:<%= radio_button_tag 'language', 'japanese', {:checked => true} %>
+    中国語:<%= radio_button_tag 'language', 'chinese' %>
+    英語:  <%= radio_button_tag 'language', 'english' %>
+  </p>
+  <p>
+    サイトを選択<br/>
+    Youtube:<%= radio_button_tag 'search_site', 'youtube', {:checked => true} %>
+    Youku:<%= radio_button_tag 'search_site', 'youku'  %>
+  </p>
+  <p>
+  検索するものを選択<br/>
+    OP:<%= radio_button_tag 'oped', 'op', {:checked => true} %>
+    ED:<%= radio_button_tag 'oped', 'ed' %>
+  </p>
+  <%= submit_tag "検索", name: nil %>
+<% end %>
+
+<%= link_to 'Edit', edit_anime_datum_path(@anime_datum) %> |
+<%= link_to 'Back', anime_data_path %>

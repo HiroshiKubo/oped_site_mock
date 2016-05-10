@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  anime_id: 1
+  title: MyString
+  video_id: 
+  content: MyString
+  oped: MyString
+  number: 
+  advertisement: MyString
+  initials: MyString
+
+two:
+  anime_id: 1
+  title: MyString
+  video_id: 
+  content: MyString
+  oped: MyString
+  number: 
+  advertisement: MyString
+  initials: MyString

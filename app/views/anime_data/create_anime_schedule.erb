@@ -1,0 +1,9 @@
+<h1>Editing Anime Schedule</h1>
+<%= @checkd_animes_number %>
+<br/>
+<% @checkd_animes_number.map{ |num| %>
+  <%= num.to_i-1  unless num.to_i == 0 %>
+  <%= @animes_data[num.to_i-1][:japanese] unless num.to_i == 0 %>
+<% } %>
+
+<%= link_to 'Back', anime_data_path %>

@@ -1,0 +1,17 @@
+<h1>Editing Anime Schedule</h1>
+<% #form_for(:data,url: {:action=>'data_list'}) do |f| %>
+<%= form_tag({:action=>"data_list"}, {:method=>"post"}) do %>
+  <div class="field">
+    year<br/>
+    <input type="text" name="year" />
+  </div>
+  <div class="field">
+    month<br>
+    <input type="text" name="month" />
+  </div>
+  <div class="actions">
+    <%= submit_tag "検索" %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', anime_data_path %>

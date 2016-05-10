@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Anime Data</h1>
+<p>
+  <%= link_to "スケジュール検索" , action: "anime_schedule" %><br/>
+  <%= link_to "videos"        , controller: "videos" %><br/>
+  <%= link_to "記事"           , controller: "articles" %>
+<p>
+<table>
+  <thead>
+    <tr>
+      <th>Japanese</th>
+      <th>English</th>
+      <th>Chinese</th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Url</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @anime_data.each do |anime_datum| %>
+      <tr>
+        <td><%= anime_datum.japanese %></td>
+        <td><%= anime_datum.english %></td>
+        <td><%= anime_datum.chinese %></td>
+        <td><%= anime_datum.year %></td>
+        <td><%= anime_datum.month %></td>
+        <td><%= anime_datum.url %></td>
+        <td><%= link_to 'Show', anime_datum %></td>
+        <td><%= link_to 'Edit', edit_anime_datum_path(anime_datum) %></td>
+        <td><%= link_to 'Destroy', anime_datum, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '動画を検索する', anime_data_select_search_language_path(anime_datum) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Anime datum', new_anime_datum_path %>
